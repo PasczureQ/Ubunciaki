@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8">
-  <title>Egzamin INF.02 – Test</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="test.css">
-  <link rel="shortcut icon" href="ubuntuico.png">
+<meta charset="UTF-8">
+<title>Egzamin INF.02</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="test.css">
 </head>
 <body>
 
@@ -17,24 +14,30 @@
 </header>
 
 <nav class="menu">
-  <a href="index.html">Start</a>
-  <a href="użytkownik.html">Użytkownik</a>
-  <a href="admin.html">Administracja</a>
-  <a href="root.html">Root</a>
-  <a href="test.html" class="active">Test</a>
+    <a href="index.html">Start</a>
+    <a href="użytkownik.html">Użytkownik</a>
+    <a href="admin.html">Administracja</a>
+    <a href="root.html">Root</a>
+    <a href="test.html" class="active">Test</a>
 </nav>
 
-<main>
-  <div class="exam-bar">
-    <span>Czas: <strong id="timer">25:00</strong></span>
-    <span>Liczba pytań: 30</span>
-  </div>
+<div class="exam-bar">
+  Czas: <strong id="timer">30:00</strong>
+</div>
 
-  <form id="test"></form>
+<form id="test"></form>
 
-  <div class="exam-actions">
-    <button type="button" onclick="finishTest()">Zakończ egzamin</button>
-    <div id="finalScore" class="final-score"></div>
+<div class="exam-actions">
+  <button type="button" id="finishBtn">Zakończ egzamin</button>
+</div>
+
+<div class="result hidden" id="finalScore">
+  <div class="result-box"></div>
+</div>
+
+<script src="test.js"></script>
+</body>
+</html>    <div id="finalScore" class="final-score"></div>
   </div>
 </main>
 
