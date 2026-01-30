@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Komendy Ubuntu | Administracja</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="ubuntuico.png">
+</head>
+<body>
+  <header>
+    <h1>Komendy Administracyjne</h1>
+      <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap" rel="stylesheet">
+    <p>Zarządzanie użytkownikami, usługami i konfiguracją serwera.</p>
+  </header>
+
+<nav class="menu">
+    <a href="index.html">Start</a>
+    <a href="użytkownik.html">Użytkownik</a>
+    <a href="admin.html" class="active">Administracja</a>
+    <a href="root.html">Root</a>
+    <a href="test.html">Test</a>
+</nav>
+
+  <main>
+    <section>
+      <h2>Komendy Administracyjne</h2>
+      <div class="command">
+        <span class="cmd">useradd &lt;użytkownik&gt;</span>
+        <span class="desc">Dodanie nowego użytkownika do systemu</span>
+        <img src="adduser.jpg" alt="adduser"> 
+      </div>
+      <div class="command">
+        <span class="cmd">userdel &lt;użytkownik&gt;/userdel -r &lt;użytkownik&gt;</span>
+        <span class="desc">
+          Usunięcie użytkownika z systemu
+          -r usuwa również katalog, który linux tworzy dla każdego użytkownika
+        </span>
+        <img src="userdel.jpg" alt="userdel">
+      </div>
+      <div class="command">
+        <span class="cmd">usermod</span>
+        <span class="desc">
+          Modyfikacja konta użytkownika, by poznać szczegółowe informacje do wykorzystania komendy polecamy użyć --help przed dokonywaniem zmian
+        </span>
+        <img src="usermod.png" alt="usermod">
+      </div>
+      <div class="command">
+        <span class="cmd">groupadd &lt;group&gt;</span>
+        <span class="desc">Utworzenie nowej grupy</span>
+        <img src="addgroup.png" alt="groupadd">
+      </div>
+      <div class="command">
+        <span class="cmd">systemctl status</span>
+        <span class="desc">Sprawdzenie statusu usługi</span>
+        <img src="systemctl.png" alt="systemctl">
+      </div>
+      <div class="command">
+        <span class="cmd">systemctl start/ systemctl enable</span>
+        <span class="desc">Uruchomienie usługi, systemctl enable sprawia że usługa automatycznie uruchomi się przy uruchomieniu systemu</span>
+        <img src="systemctlenable.png" alt="systemctl-enable">
+      </div>
+       <div class="command">
+        <span class="cmd">systemctl stop/ systemctl disable</span>
+        <span class="desc">Zatrzymanie usługi, systemctl disable wyłącza usługę permamentnie co oznacza że nie włączy się ona po zrebootowaniu systemu</span>
+        <img src="stop-systemctl.png" alt="stop-systemctl">
+         <div class="command">
+        <span class="cmd">systemctl restart</span>
+        <span class="desc">zrestartowanie usługi</span>
+        <img src="restart-systemctl.png" alt="restart-systemctl">
+    </section>
+
+    <section>
+      <h2>Karty sieciowe</h2>
+    <div>
+        <span class="cmd">systemctl restart NetworkManager</span>
+        <span class="desc">Restartuje usługę zarządzania siecią.</span>
+        <img src="" alt="">
+    </div>
+
+    <div>
+        <span class="cmd">ip link set eth0 up</span>
+        <span class="desc">Włącza interfejs sieciowy.</span>
+        <img src="" alt="">
+    </div>
+
+    <div>
+        <span class="cmd"> ip link set eth0 down</span>
+        <span class="desc">Wyłącza interfejs sieciowy.</span>
+        <img src="" alt="">
+    </div>
+
+    <div>
+        <span class="cmd"> dhclient eth0</span>
+        <span class="desc">Pobiera adres IP z serwera DHCP.</span>
+        <img src="" alt="">
+    </div>
+
+    <div>
+        <span class="cmd"> nmcli networking off</span>
+        <span class="desc">Wyłącza wszystkie sieci zarządzane przez NetworkManager.</span>
+        <img src="" alt="">
+    </div>
+
+    <div>
+        <span class="cmd"> nmcli networking on</span>
+        <span class="desc">Włącza wszystkie sieci zarządzane przez NetworkManager.</span>
+        <img src="" alt="">
+    </div>
+
+    <div>
+        <span class="cmd"> nmcli device disconnect eth0</span>
+        <span class="desc">Odłącza urządzenie sieciowe.</span>
+        <img src="" alt="">
+    </div>
+
+    <div>
+        <span class="cmd"> nmcli device connect eth0</span>
+        <span class="desc">Łączy urządzenie sieciowe.</span>
+        <img src="" alt="">
+    </div>
+
+    <div>
+        <span class="cmd"> ip addr add 192.168.1.100/24 dev eth0</span>
+        <span class="desc">Tymczasowo ustawia adres IP.</span>
+        <img src="" alt="">
+    </div>
+
+    <div>
+        <span class="cmd"> ip route add default via 192.168.1.1</span>
+        <span class="desc">Ustawia domyślną trasę (bramę).</span>
+        <img src="" alt="">
+    </div>
+    </section>
+
+    <section class="note">
+      <p>📘 Sekcja w przygotowaniu – pojawi się więcej przykładów i zadań administracyjnych.</p>
+    </section>
+  </main>
+
+<footer>
+    <p>
+        Autorzy strony:<br><br>
+        <strong>Patryk Rakowski</strong><br>
+        <strong>Daniel Zakrzewski</strong><br>
+        <strong>Adam Brążkiewicz</strong><br><br>
+        &copy; 2026 Ubunciaki
+    </p>
+</footer>
+</body>
+</html>

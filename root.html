@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Komendy Root – Ubuntu</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="ubuntuico.png">
+</head>
+<body>
+
+<header>
+    <h1>Komendy ROOT</h1>
+    <p>Zarządzanie systemem Ubuntu jako administrator</p>
+</header>
+
+<nav class="menu">
+    <a href="index.html">Start</a>
+    <a href="użytkownik.html">Użytkownik</a>
+    <a href="admin.html">Administracja</a>
+    <a href="root.html" class="active">Root</a>
+    <a href="test.html">Test</a>
+</nav>
+
+<main>
+
+    <section>
+        <h2>Uzyskiwanie uprawnień root</h2>
+
+        <div class="command">
+            <span class="cmd">sudo</span>
+            <span class="desc">uruchomienie jednej komendy jako root</span>
+            <img src="sudo.png" alt="sudo">
+        </div>
+
+        <div class="command">
+            <span class="cmd">exit</span>
+            <span class="desc">wyjście z trybu root</span>
+            <img src="exit.png" alt="exit">
+        </div>
+    </section>
+
+    <section>
+        <h2>Zarządzanie pakietami (APT)</h2>
+
+        <div class="command">
+            <span class="cmd">apt-get update</span>
+            <span class="desc">aktualizacja listy pakietów</span>
+            <img src="apt-update.png" alt="apt-update">
+        </div>
+
+        <div class="command">
+            <span class="cmd">apt upgrade</span>
+            <span class="desc">aktualizacja systemu</span>
+            <img src="apt-upgrade.png" alt="apt-upgrade">
+        </div>
+
+        <div class="command">
+            <span class="cmd">apt install pakiet</span>
+            <span class="desc">instalacja pakietu</span>
+            <img src="apt-install.png" alt="apt-install">
+        </div>
+
+        <div class="command">
+            <span class="cmd">apt remove pakiet</span>
+            <span class="desc">usunięcie pakietu</span>
+            <img src="remove.jpg" alt="apt remove">
+        </div>
+
+        <div class="command">
+            <span class="cmd">apt purge pakiet</span>
+            <span class="desc">usunięcie pakietu wraz z konfiguracją</span>
+            <img src="apt-purge.png" alt="apt-purge">
+        </div>
+
+        <div class="command">
+            <span class="cmd">apt autoremove</span>
+            <span class="desc">usunięcie niepotrzebnych zależności</span>
+            <img src="apt-autoremove.png" alt="apt-autormove">
+        </div>
+    </section>
+
+    <section>
+        <h2>Pliki i katalogi</h2>
+
+
+        <div class="command">
+            <span class="cmd">ls /ls -l</span>
+            <span class="desc">lista plików</span>
+            <img src="ls-l.jpg" alt="ls">
+        </div>
+
+        <div class="command">
+            <span class="cmd">cd /ścieżka</span>
+            <span class="desc">zmiana katalogu</span>
+            <img src="cd.png" alt="cd">
+        </div>
+
+        <div class="command">
+            <span class="cmd">pwd</span>
+            <span class="desc">aktualna ścieżka</span>
+            <img src="pwd.png" alt="pwd">
+        </div>
+
+        <div class="command">
+            <span class="cmd">mkdir nazwa</span>
+            <span class="desc">utworzenie katalogu</span>
+            <img src="mkdir.jpg" alt="mkdir">
+        </div>
+
+        <div class="command">
+            <span class="cmd">rm -r katalog</span>
+            <span class="desc">usunięcie katalogu z zawartością</span>
+            <img src="rm-r.jpg" alt="rm-r">
+        </div>
+    </section>
+
+    <section>
+        <h2>Podgląd i edycja plików</h2>
+
+        <div class="command">
+            <span class="cmd">cat plik</span>
+            <span class="desc">wyświetlenie zawartości pliku</span>
+            <img src="cat.png" alt="cat">
+        </div>
+
+        <div class="command">
+            <span class="cmd">less plik</span>
+            <span class="desc">przewijany podgląd</span>
+            <img src="Less.png" alt="less">
+        </div>
+
+        <div class="command">
+            <span class="cmd">nano plik</span>
+            <span class="desc">edycja w edytorze nano</span>
+            <img src="nano.png" alt="nano">
+        </div>
+
+        <div class="command">
+            <span class="cmd">tail -f plik</span>
+            <span class="desc">podgląd logów na żywo</span>
+            <img src="tail.png" alt="tail">
+        </div>
+    </section>
+
+    <section>
+        <h2>Procesy i system</h2>
+
+        <div class="command">
+            <span class="cmd">top / htop</span>
+            <span class="desc">monitorowanie procesów</span>
+            <img src="top.png" alt="">
+        </div>
+
+        <div class="command">
+            <span class="cmd">ps aux</span>
+            <span class="desc">lista procesów</span>
+            <img src="ps-aux.png" alt="">
+        </div>
+
+        <div class="command">
+            <span class="cmd">kill -9 PID</span>
+            <span class="desc">wymuszone zakończenie procesu</span>
+            <img src="kill.png" alt="kill">
+        </div>
+
+        <div class="command">
+            <span class="cmd">reboot</span>
+            <span class="desc">restart systemu</span>
+            <img src="reboot.png" alt="">
+        </div>
+
+        <div class="command">
+            <span class="cmd">shutdown -r now</span>
+            <span class="desc">natychmiastowe wyłączenie systemu</span>
+            <img src="shutdown.png" alt="shutdown">
+        </div>
+    </section>
+
+  <section>
+    <h2>Karty sieciowe</h2>
+ <div>
+        <span class="cmd">nano /etc/netplan/01-netcfg.yaml</span>
+        <span class="desc">Otwiera plik konfiguracyjny sieci do edycji.</span>
+        <img src="" alt="">
+    </div>
+
+    <div>
+        <span class="cmd">netplan apply</span>
+        <span class="desc">Stosuje zmiany w konfiguracji sieci.</span>
+        <img src="" alt="">
+    </div>
+
+    <div>
+        <span class="cmd">systemctl stop NetworkManager</span>
+        <span class="desc">Zatrzymuje usługę zarządzania siecią.</span>
+        <img src="" alt="">
+    </div>
+
+    <div>
+        <span class="cmd">systemctl start NetworkManager</span>
+        <span class="desc">Uruchamia usługę zarządzania siecią.</span>
+        <img src="" alt="">
+    </div>
+
+    <div>
+        <span class="cmd">ip route del default</span>
+        <span class="desc">Usuwa domyślną trasę sieciową.</span>
+        <img src="" alt="">
+    </div>
+
+    <div>
+        <span class="cmd">ip addr flush dev eth0</span>
+        <span class="desc">Usuwa wszystkie adresy IP z interfejsu.</span>
+        <img src="" alt="">
+    </div>
+    </section>
+
+</main>
+
+<footer>
+     <p>
+        Autorzy strony:<br><br>
+        <strong>Patryk Rakowski</strong><br>
+        <strong>Daniel Zakrzewski</strong><br>
+        <strong>Adam Brążkiewicz</strong><br><br>
+        &copy; 2026 Ubunciaki
+    </p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Egzamin INF.02 – Test</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="test.css">
+  <link rel="shortcut icon" href="ubuntuico.png">
+</head>
+<body>
+
+<header>
+  <h1>Egzamin INF.02</h1>
+  <p>Test teoretyczny – 28 pytań</p>
+</header>
+
+<nav class="menu">
+  <a href="index.html">Start</a>
+  <a href="użytkownik.html">Użytkownik</a>
+  <a href="admin.html">Administracja</a>
+  <a href="root.html">Root</a>
+  <a href="test.html" class="active">Test</a>
+</nav>
+
+<main>
+  <div class="exam-bar">
+    <span>Czas: <strong id="timer">25:00</strong></span>
+    <span>Liczba pytań: 28</span>
+  </div>
+
+  <form id="test"></form>
+
+  <div class="exam-actions">
+    <button type="button" onclick="finishTest()">Zakończ egzamin</button>
+    <div id="finalScore" class="final-score"></div>
+  </div>
+</main>
+
+<script>
+const questions = [
+  { q: "Która komenda wyświetla zawartość katalogu?", a: ["cd", "ls", "pwd", "cat"], c: 1 },
+  { q: "Która opcja ls wyświetla szczegółowe informacje?", a: ["-a", "-h", "-l", "-r"], c: 2 },
+  { q: "Do czego służy polecenie pwd?", a: ["Zmiana katalogu", "Usunięcie pliku", "Wyświetlenie ścieżki", "Lista procesów"], c: 2 },
+  { q: "Która komenda czyści ekran terminala?", a: ["reset", "clear", "cls", "wipe"], c: 1 },
+  { q: "Jak utworzyć nowy katalog?", a: ["touch", "mkdir", "cd", "cp"], c: 1 },
+
+  { q: "Która komenda tworzy pusty plik?", a: ["nano", "touch", "cat", "vi"], c: 1 },
+  { q: "Do czego służy cp?", a: ["Przenoszenie plików", "Kopiowanie plików", "Usuwanie", "Wyświetlanie"], c: 1 },
+  { q: "Która komenda zmienia nazwę pliku?", a: ["mv", "cp", "rm", "ls"], c: 0 },
+  { q: "Jak usunąć plik?", a: ["rm", "delete", "erase", "del"], c: 0 },
+  { q: "Która opcja rm usuwa katalog?", a: ["-f", "-a", "-r", "-l"], c: 2 },
+
+  { q: "Która komenda wyświetla zawartość pliku?", a: ["ls", "cat", "nano", "touch"], c: 1 },
+  { q: "Jak sprawdzić instrukcję polecenia?", a: ["help", "manual", "man", "info"], c: 2 },
+  { q: "Do czego służy --help?", a: ["Usuwa pliki", "Pokazuje opcje", "Zmienia katalog", "Restartuje"], c: 1 },
+  { q: "Która komenda pokazuje historię poleceń?", a: ["log", "recent", "history", "last"], c: 2 },
+  { q: "Jak sprawdzić nazwę użytkownika?", a: ["who", "user", "whoami", "login"], c: 2 },
+
+  { q: "Która komenda zmienia hasło?", a: ["passwd", "password", "chpass", "auth"], c: 0 },
+  { q: "Która komenda pokazuje procesy?", a: ["top", "ps", "htop", "jobs"], c: 1 },
+  { q: "Jak zakończyć proces po PID?", a: ["stop", "end", "kill", "close"], c: 2 },
+  { q: "Która komenda pokazuje czas działania systemu?", a: ["time", "uptime", "clock", "run"], c: 1 },
+  { q: "Do czego służy sudo?", a: ["Zmiana użytkownika", "Uruchomienie jako root", "Restart", "Wylogowanie"], c: 1 },
+
+  { q: "Jak wyjść z trybu root?", a: ["logout", "exit", "stop", "quit"], c: 1 },
+  { q: "Która komenda aktualizuje listę pakietów?", a: ["apt install", "apt upgrade", "apt update", "apt remove"], c: 2 },
+  { q: "Jak zainstalować pakiet?", a: ["apt get", "apt install", "apt add", "apt pkg"], c: 1 },
+  { q: "Która komenda usuwa pakiet z konfiguracją?", a: ["apt remove", "apt delete", "apt purge", "apt clean"], c: 2 },
+  { q: "Która komenda usuwa niepotrzebne zależności?", a: ["apt clear", "apt autoremove", "apt clean", "apt free"], c: 1 },
+
+  { q: "Jak dodać użytkownika?", a: ["useradd", "adduser", "newuser", "mkuser"], c: 0 },
+  { q: "Jak usunąć użytkownika razem z katalogiem?", a: ["userdel", "userdel -r", "deluser", "rmuser"], c: 1 },
+  { q: "Która komenda modyfikuje konto użytkownika?", a: ["usermod", "useredit", "chuser", "moduser"], c: 0 },
+  { q: "Jak dodać grupę?", a: ["groupadd", "addgroup", "mkgroup", "newgroup"], c: 0 },
+  { q: "Jak sprawdzić status usługi?", a: ["service check", "systemctl status", "systemctl show", "svc status"], c: 1 },
+
+  { q: "Jak uruchomić usługę?", a: ["systemctl start", "systemctl run", "service on", "svc start"], c: 0 },
+  { q: "Jak zatrzymać usługę?", a: ["systemctl stop", "systemctl kill", "service off", "svc stop"], c: 0 },
+  { q: "Jak zrestartować usługę?", a: ["systemctl reload", "systemctl restart", "systemctl reset", "service restart"], c: 1 },
+  { q: "Która komenda restartuje system?", a: ["shutdown", "reboot", "poweroff", "restart"], c: 1 },
+  { q: "Jak wyłączyć system natychmiast?", a: ["shutdown -r now", "shutdown -h now", "poweroff", "halt"], c: 1 },
+
+  { q: "Która komenda edytuje plik w nano?", a: ["nano", "vim", "cat", "less"], c: 0 },
+  { q: "Która komenda pokazuje plik strona po stronie?", a: ["cat", "less", "tail", "more"], c: 1 },
+  { q: "Która komenda pokazuje logi na żywo?", a: ["tail -f", "watch", "log", "less"], c: 0 },
+  { q: "Która komenda monitoruje procesy na żywo?", a: ["ps", "top", "jobs", "watch"], c: 1 },
+  { q: "Jak wymusić zakończenie procesu?", a: ["kill", "kill -9", "stop -9", "end -9"], c: 1 },
+  { q: "Co robi ip link set eth0 up" , a: ["włącza kartę sieciową", "restartuje kartę sieciową", "wyłącza kartę sieciową", "pokazuje status karty sieciowej"], c: 0},
+  { q: "Do czego służy ping", a: ["sprawdzenia połączenia między urządzeniami w sieci lokalnej", "sprawdza połączenie w sieci globalnej", "żadne z powyższych", "wszystkie z powyższych"], c: 3},
+  { q: "Co robi resolvectl status", a: ["pokazuje konfiguracje DNS", "resetuje konfiguracje DNS", "pokazuje konfiguracje DHCP", "resetuje konfiguracje DHCP"], c: 0},
+  { q: "Co robi netplan apply", a:["stosuje plan sieciowy do wyłączenia komputera", "stosuje plan sieciowy", "sprawdza poprawność planu sieciowego", "żadne z powyższych"], c: 1},
+  { q: "Do czego słuzy komenda ip a", a: ["pokazuje obecnie wykorzystwany interfejs sieciowy", "pokazuje wyłączone interfejsy sieciowe", "pokazuje właczone interfejsy sieciowe", "pokazuje wszystkie interfejsy sieciowe"], c: 3},
+  { q: "gdzie znajduje się plik konfiguracyjny dla interfejsów sieciowych", a: ["/etc/netplan/01-netcfg.yaml", "/dev/netplan/config.yaml", "/netplan/config.txt", "root/netplan/config.txt"], c: 0}
+];
+
+let selected = [];
+let time = 1500;
+let interval;
+let finished = false;
+
+function shuffle(arr) {
+  return arr.sort(() => Math.random() - 0.5);
+}
+
+function startTest() {
+  finished = false;
+  selected = shuffle([...questions]).slice(0, 28);
+  const form = document.getElementById("test");
+  form.innerHTML = "";
+
+  selected.forEach((q, i) => {
+    form.innerHTML += `
+      <div class="question" id="q${i}">
+        <div class="q-title">${i + 1}. ${q.q}</div>
+        ${shuffle(q.a.map((ans, idx) => ({ans, idx}))).map(o => `
+          <label class="answer">
+            <input type="radio" name="q${i}" value="${o.idx}">
+            ${o.ans}
+          </label>
+        `).join("")}
+      </div>
+    `;
+  });
+
+  document.querySelector(".exam-actions button").textContent = "Zakończ egzamin";
+  document.getElementById("finalScore").innerHTML = "";
+  startTimer();
+}
+
+function startTimer() {
+  clearInterval(interval);
+  time = 1680;
+  interval = setInterval(() => {
+    const m = Math.floor(time / 60);
+    const s = time % 60;
+    document.getElementById("timer").textContent = `${m}:${s.toString().padStart(2,"0")}`;
+    if (--time < 0) finishTest();
+  }, 1000);
+}
+
+function finishTest() {
+  if (finished) {
+    startTest();
+    return;
+  }
+
+  finished = true;
+  clearInterval(interval);
+
+  let score = 0;
+
+  selected.forEach((q, i) => {
+    const checked = document.querySelector(`input[name="q${i}"]:checked`);
+    const answers = document.querySelectorAll(`#q${i} .answer`);
+
+    answers.forEach(label => {
+      const input = label.querySelector("input");
+      const val = Number(input.value);
+
+      if (val === q.c) label.classList.add("correct");
+      if (checked && val === Number(checked.value) && val !== q.c) {
+        label.classList.add("wrong");
+      }
+    });
+
+    if (checked && Number(checked.value) === q.c) score++;
+  });
+
+  const percent = Math.round((score / 28) * 100);
+
+  document.getElementById("finalScore").innerHTML = `
+    ${score} / 28
+    <span>${percent}%</span>
+  `;
+
+  document.querySelector(".exam-actions button").textContent = "Nowy test";
+}
+
+startTest();
+</script>
+
+</body>
+</html>
