@@ -13,7 +13,7 @@
 
 <header>
   <h1>Egzamin INF.02</h1>
-  <p>Test teoretyczny – 28 pytań</p>
+  <p>Test teoretyczny – 30 pytań</p>
 </header>
 
 <nav class="menu">
@@ -27,7 +27,7 @@
 <main>
   <div class="exam-bar">
     <span>Czas: <strong id="timer">25:00</strong></span>
-    <span>Liczba pytań: 28</span>
+    <span>Liczba pytań: 30</span>
   </div>
 
   <form id="test"></form>
@@ -106,7 +106,7 @@ function shuffle(arr) {
 
 function startTest() {
   finished = false;
-  selected = shuffle([...questions]).slice(0, 28);
+  selected = shuffle([...questions]).slice(0, 30);
   const form = document.getElementById("test");
   form.innerHTML = "";
 
@@ -168,10 +168,10 @@ function finishTest() {
     if (checked && Number(checked.value) === q.c) score++;
   });
 
-  const percent = Math.round((score / 28) * 100);
+  const percent = Math.round((score / 30) * 100);
 
   document.getElementById("finalScore").innerHTML = `
-    ${score} / 28
+    ${score} / 30
     <span>${percent}%</span>
   `;
 
