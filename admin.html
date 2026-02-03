@@ -72,69 +72,57 @@
 
     <section>
       <h2>Karty sieciowe</h2>
-    <div>
+    <div class="command">
         <span class="cmd">systemctl restart NetworkManager</span>
         <span class="desc">Restartuje usługę zarządzania siecią.</span>
         <img src="Network-Manager-Restarted.png" alt="systemctl restart NetworkManager">
     </div>
 
-    <div>
+    <div class="command">
         <span class="cmd">ip link set eth0 up</span>
         <span class="desc">Włącza interfejs sieciowy.</span>
-        <img src="Flush-Network-IPAddresses-in-Linux.png" alt="">
+        <img src="eth03up.png" alt="">
     </div>
 
-    <div>
+    <div class="command">
         <span class="cmd"> ip link set eth0 down</span>
         <span class="desc">Wyłącza interfejs sieciowy.</span>
-        <img src="" alt="">
+        <img src="eth03down.png" alt="">
     </div>
 
-    <div>
+    <div class="command">
         <span class="cmd"> dhclient eth0</span>
         <span class="desc">Pobiera adres IP z serwera DHCP.</span>
-        <img src="" alt="">
+        <img src="dhclient.png" alt="">
     </div>
 
-    <div>
+    <div class="command">
         <span class="cmd"> nmcli networking off</span>
         <span class="desc">Wyłącza wszystkie sieci zarządzane przez NetworkManager.</span>
-        <img src="" alt="">
+        <img src="nmclioff.png" alt="">
     </div>
 
-    <div>
+    <div class="command">
         <span class="cmd"> nmcli networking on</span>
         <span class="desc">Włącza wszystkie sieci zarządzane przez NetworkManager.</span>
-        <img src="" alt="">
+        <img src="nmclion.png" alt="">
     </div>
 
-    <div>
-        <span class="cmd"> nmcli device disconnect eth0</span>
-        <span class="desc">Odłącza urządzenie sieciowe.</span>
-        <img src="" alt="">
-    </div>
-
-    <div>
-        <span class="cmd"> nmcli device connect eth0</span>
-        <span class="desc">Łączy urządzenie sieciowe.</span>
-        <img src="" alt="">
-    </div>
-
-    <div>
+    <div class="command">
         <span class="cmd"> ip addr add 192.168.1.100/24 dev eth0</span>
         <span class="desc">Tymczasowo ustawia adres IP.</span>
-        <img src="" alt="">
+        <img src="ipaddradd.png" alt="">
     </div>
 
-    <div>
+    <div class="command">
         <span class="cmd"> ip route add default via 192.168.1.1</span>
         <span class="desc">Ustawia domyślną trasę (bramę).</span>
-        <img src="" alt="">
+        <img src="iprouteadd.png" alt="">
     </div>
     </section>
 
     <section class="note">
-      <p>📘 Sekcja w przygotowaniu – pojawi się więcej przykładów i zadań administracyjnych.</p>
+      <p>📘 Powyższe komendy wymagają uprawnień administratora do poprawnego wykonania</p>
     </section>
   </main>
 

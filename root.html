@@ -181,37 +181,37 @@
 
   <section>
     <h2>Karty sieciowe</h2>
- <div>
+ <div class="command">
         <span class="cmd">nano /etc/netplan/01-netcfg.yaml</span>
         <span class="desc">Otwiera plik konfiguracyjny sieci do edycji.</span>
-        <img src="" alt="">
+        <img src="nano_netplan.png" alt="nano netplan">
     </div>
 
-    <div>
+    <div class="command">
         <span class="cmd">netplan apply</span>
         <span class="desc">Stosuje zmiany w konfiguracji sieci.</span>
-        <img src="netplan.png" alt="">
+        <img src="netplan.png" alt="netplan">
     </div>
 
-    <div>
+    <div class="command">
         <span class="cmd">systemctl stop NetworkManager</span>
         <span class="desc">Zatrzymuje usługę zarządzania siecią.</span>
-        <img src="Disable-Network-Manager-Service.png" alt="">
+        <img src="Disable-Network-Manager-Service.png" alt="systemctl stop NetworkManager">
     </div>
 
-    <div>
+    <div class="command">
         <span class="cmd">systemctl start NetworkManager</span>
         <span class="desc">Uruchamia usługę zarządzania siecią.</span>
-        <img src="Enable-NetworkManager.png" alt="">
+        <img src="Enable-NetworkManager.png" alt="systemctl start NetworkManager">
     </div>
 
-    <div>
+    <div class="command">
         <span class="cmd">ip route del default</span>
         <span class="desc">Usuwa domyślną trasę sieciową.</span>
-        <img src="ip route del default.png" alt="">
+        <img src="iproutedeldefault.png" alt="">
     </div>
 
-    <div>
+    <div class="command">
         <span class="cmd">ip addr flush dev eth0</span>
         <span class="desc">Usuwa wszystkie adresy IP z interfejsu.</span>
         <img src="Flush-Network-IPAddresses-in-Linux (1).png" alt="">
