@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<title>Egzamin INF.02</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="test.css">
+</head>
+<body>
+
+<header>
+  <h1>Egzamin INF.02</h1>
+  <p>Test teoretyczny – 30 pytań</p>
+</header>
+
+<nav class="menu">
+    <a href="index.html">Start</a>
+    <a href="użytkownik.html">Użytkownik</a>
+    <a href="admin.html">Administracja</a>
+    <a href="root.html">Root</a>
+    <a href="test.html" class="active">Test</a>
+</nav>
+
+<div class="exam-bar">
+  Czas: <strong id="timer">30:00</strong>
+</div>
+
+<form id="test"></form>
+
+<div class="exam-actions">
+  <button type="button" id="finishBtn">Zakończ egzamin</button>
+</div>
+
+<div class="result hidden" id="finalScore">
+  <div class="result-box"></div>
+</div>
+
+<script src="test.js"></script>
+</body>
+  </html>

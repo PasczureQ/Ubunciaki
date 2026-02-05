@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Komendy użytkownika – Ubuntu</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="ubuntuico.png">
+</head>
+<body>
+
+<header>
+    <h1>Komendy użytkownika</h1>
+    <p>Polecenia dostępne bez uprawnień administratora</p>
+</header>
+
+<nav class="menu">
+    <a href="index.html">Start</a>
+    <a href="użytkownik.html" class="active">Użytkownik</a>
+    <a href="admin.html">Administracja</a>
+    <a href="root.html">Root</a>
+    <a href="test.html">Test</a>
+</nav>
+
+<main>
+
+    <section class="intro">
+        <h2>Informacje</h2>
+        <p>
+            Poniżej znajdują się komendy, które może wykonywać zwykły użytkownik
+            systemu Ubuntu – bez użycia <strong>sudo</strong> oraz uprawnień administratora.
+        </p>
+    </section>
+
+    <section>
+        <h2>Podstawowe operacje</h2>
+
+        <div class="command">
+            <span class="cmd">ls / ls -l</span>
+            <span class="desc">wyświetla zawartość katalogu (wersja -l jest szczegółowa)</span>
+            <img src="../zdjecia/ls-l.jpg" alt="ls">
+        </div>
+
+        <div class="command">
+            <span class="cmd">cd &lt;katalog&gt;</span>
+            <span class="desc">zmiana katalogu</span>
+            <img src="../zdjecia/cd.png" alt="cd">
+        </div>
+
+        <div class="command">
+            <span class="cmd">pwd / pwd -l</span>
+            <span class="desc">
+                pwd -wyświetla aktualną ścieżkę katalogu
+                pwd -l - wyświetla aktualną scieżkę od katalogu root
+            </span>
+            <img src="../zdjecia/pwd.png" alt="pwd">
+        </div>
+
+        <div class="command">
+            <span class="cmd">clear</span>
+            <span class="desc">czyści ekran terminala</span>
+            <img src="../zdjecia/clear.png" alt="clear">
+        </div>
+    </section>
+
+    <section>
+        <h2>Pliki i katalogi</h2>
+
+        <div class="command">
+            <span class="cmd">mkdir &lt;nazwa&gt;</span>
+            <span class="desc">tworzy nowy katalog</span>
+            <img src="../zdjecia/mkdir.jpg" alt="mkdir">
+        </div>
+
+        <div class="command">
+            <span class="cmd">touch &lt;nazwa&gt;</span>
+            <span class="desc">tworzy pusty plik</span>
+            <img src="../zdjecia/touch.jpg" alt="touch">
+        </div>
+
+        <div class="command">
+            <span class="cmd">cp &lt;źródło&gt; &lt;cel&gt;</span>
+            <span class="desc">kopiuje plik lub katalog</span>
+            <img src="../zdjecia/cp.png" alt="cp">
+        </div>
+
+        <div class="command">
+            <span class="cmd">mv &lt;stara&gt; &lt;nowa&gt;</span>
+            <span class="desc">przenosi pliki lub zmienia nazwę</span>
+            <img src="../zdjecia/mv.png" alt="mv">
+        </div>
+
+        <div class="command">
+            <span class="cmd">rm &lt;plik&gt;</span>
+            <span class="desc">usuwa plik (dla katalogów użyj -r)</span>
+            <img src="../zdjecia/rm.jpg" alt="rm">
+        </div>
+    </section>
+
+    <section>
+        <h2>Informacje i pomoc</h2>
+
+        <div class="command">
+            <span class="cmd">cat &lt;plik&gt; / cat &lt;"plik1"&gt; &lt;"plik2"&gt;... &gt; &lt;plik z złączoną zawartością&gt;</span>
+            <span class="desc">
+                wyświetla zawartość pliku, można tym też połączyć zawartość kilku plików tekstowych
+            </span>
+            <img src="../zdjecia/cat.png" alt="cat">
+        </div>
+
+        <div class="command">
+            <span class="cmd">man &lt;komenda&gt;</span>
+            <span class="desc">instrukcja obsługi polecenia</span>
+            <img src="../zdjecia/man.png" alt="man">
+        </div>
+
+        <div class="command">
+            <span class="cmd">--help</span>
+            <span class="desc">lista dostępnych opcji dla komendy</span>
+            <img src="../zdjecia/--help.jpg" alt="help">
+        </div>
+
+        <div class="command">
+            <span class="cmd">history (10)</span>
+            <span class="desc">historia wpisanych poleceń, można ograniczyć liczbę poleceń które zostaną pokazane poprzez wpisanie liczby po history</span>
+            <img src="../zdjecia/history.jpg" alt="history">
+        </div>
+    </section>
+
+    <section>
+        <h2>Użytkownik i procesy</h2>
+
+        <div class="command">
+            <span class="cmd">whoami</span>
+            <span class="desc">nazwa aktualnego użytkownika</span>
+            <img src="../zdjecia/whoami.png" alt="whoami">
+        </div>
+
+        <div class="command">
+            <span class="cmd">passwd</span>
+            <span class="desc">zmiana hasła użytkownika</span>
+            <img src="../zdjecia/passwd.png" alt="passwd">
+        </div>
+
+        <div class="command">
+            <span class="cmd">ps</span>
+            <span class="desc">lista działających procesów</span>
+            <img src="../zdjecia/ps.png" alt="ps">
+        </div>
+
+        <div class="command">
+            <span class="cmd">kill &lt;PID&gt;</span>
+            <span class="desc">zamyka proces o danym ID</span>
+            <img src="../zdjecia/kill.png" alt="kill">
+        </div>
+
+        <div class="command">
+            <span class="cmd">uptime</span>
+            <span class="desc">czas działania systemu</span>
+            <img src="../zdjecia/uptime.jpg" alt="uptime">
+        </div>
+    </section>
+
+    <section>
+        <h2>Karty sieciowe</h2>
+
+        <div class="command">
+        <span class="cmd">ip a</span>
+        <span class="desc">Pokazuje wszystkie interfejsy i ich adresy IP.</span>
+        <img src="../zdjecia/ip-all.png" alt="ip all">
+    </div>
+
+    <div class="command">
+        <span class="cmd">ip link</span>
+        <span class="desc">Wyświetla listę interfejsów sieciowych i ich stan.</span>
+        <img src="../zdjecia/ip-link.png" alt="ip link">
+    </div>
+
+    <div class="command">
+        <span class="cmd">ip addr show</span>
+        <span class="desc">Pokazuje szczegółowe adresy IP dla każdego interfejsu.</span>
+        <img src="../zdjecia/ip-addr-show.png" alt="ip addr show">
+    </div>
+
+    <div class="command">
+        <span class="cmd">ip route</span>
+        <span class="desc">Pokazuje trasę do sieci (routing).</span>
+        <img src="../zdjecia/ip-route.png" alt="ip route">
+    </div>
+
+    <div class="command">
+        <span class="cmd">ping 8.8.8.8</span>
+        <span class="desc">Sprawdza połączenie z tym adresem IP.</span>
+        <img src="../zdjecia/ping_8.8.8.8.png" alt="ping 8.8.8.8">
+    </div>
+
+    <div class="command">
+        <span class="cmd">ping google.com</span>
+        <span class="desc">Sprawdza połączenie z domeną.</span>
+        <img src="../zdjecia/ping_google.png" alt="ping google.com">
+    </div>
+
+    <div class="command">
+        <span class="cmd">resolvectl status</span>
+        <span class="desc">Pokazuje ustawienia DNS.</span>
+        <img src="../zdjecia/resolvectl.png" alt="resolvectl status">
+    </div>
+
+    <div class="command">
+        <span class="cmd">nmcli device status</span>
+        <span class="desc">Wyświetla aktywne urządzenia sieciowe i ich status.</span>
+        <img src="../zdjecia/nmcli-device-status.png" alt="nmcli device status">
+    </div>
+    </section>
+
+    <section class="note">
+        ℹ️ Wszystkie powyższe komendy nie wymagają uprawnień administratora.
+    </section>
+
+</main>
+
+<footer>
+     <p>
+        Autorzy strony:<br><br>
+        <strong>Patryk Rakowski</strong><br>
+        <strong>Daniel Zakrzewski</strong><br>
+        <strong>Adam Brążkiewicz</strong><br><br>
+        &copy; 2026 Ubunciaki
+    </p>
+</footer>
+
+</body>
+</html>
